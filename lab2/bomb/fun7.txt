@@ -1,0 +1,20 @@
+int fun7(ll* ptr, int x1, int x2, int t){
+  if(ptr == null)
+    return -1;
+  t = ptr[0];
+  if(t <= x1){
+    x2 = 0;
+    if(t == x1){
+      return x2;
+    }else{
+      ptr = ptr[2]; 
+      x2 = fun7(ptr, x1, x2, t);
+      x2 = 2 * x2 + 1;
+      return x2;
+    }
+  }
+  else{
+    ptr = ptr[1];
+    return 2 * fun7(ptr, x1, x2);
+  }
+}
